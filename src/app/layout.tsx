@@ -1,5 +1,7 @@
 import { Provider } from "@/components/ui/provider";
 
+import {Header} from "@/components/layout/header";
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -25,8 +27,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} flex flex-col items-center antialiased`}>
         <Provider>
+
+          <Header />
 
           {children}
 
